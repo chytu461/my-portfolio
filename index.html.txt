@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Muthineni Jaya Chaitanya | Java Spring Boot Developer</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+  <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png"/>
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0e7ff 0%, #fdf6e3 100%);
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #232946;
+    }
+
+    header {
+      background: #121629;
+      color: #fff;
+      padding: 32px 0 8px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(36, 37, 42, 0.20);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+    }
+    h2 {
+      color: #232946;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      border-left: 6px solid #0099cc;
+      padding-left: 10px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 14px;
+      background: #232946;
+      border-radius: 32px;
+      width: fit-content;
+      box-shadow: 0 3px 16px rgba(55, 105, 250, 0.1);
+      padding: 3px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 28px;
+      margin: 0 5px;
+      font-size: 1.08rem;
+      transition: background 0.20s, color 0.24s, transform 0.12s;
+    }
+    .navbar a.active,
+    .navbar a:hover {
+      background: linear-gradient(90deg, #00b894, #00bfff);
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 8px #0099cc40;
+    }
+
+    section {
+      max-width: 850px;
+      margin: 32px auto;
+      padding: 32px 32px 20px 32px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(55, 105, 250, 0.08);
+      display: none;
+    }
+    section.active { display: block; }
+
+    .skills, .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 10px;
+    }
+    .skill-badge {
+      background: linear-gradient(90deg, #005bea 0%, #3ec6e0 100%);
+      color: #fff;
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-weight: 500;
+      margin: 3px;
+      box-shadow: 0 2px 8px rgba(55, 105, 250, 0.1);
+    }
+
+    .tab-content ul {
+      padding-left: 18px;
+    }
+    .project-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .project-card {
+      border-radius: 16px;
+      background: #e9f6fa;
+      padding: 24px 18px 17px 18px;
+      box-shadow: 0 3px 10px #0099cc15;
+      transition: box-shadow 0.22s;
+    }
+    .project-card:hover {
+      box-shadow: 0 8px 24px #0099cc40;
+      background: #f2f2fd;
+    }
+    .project-title { font-weight: 600; font-size: 1.07rem; color: #00697e;}
+    .project-desc { margin: 5px 0 7px; font-size: 0.99rem; }
+    .project-tech { font-size: 0.93rem; color: #373374; }
+
+    .contact-icons {
+      display: flex;
+      gap: 11px;
+      justify-content: center;
+      margin: 15px 0 15px;
+    }
+    .contact-icons a {
+      background: #0099cc20;
+      color: #0099cc;
+      border-radius: 100%;
+      padding: 8px 11px;
+      font-size: 1.4rem;
+      transition: background 0.16s, color 0.16s;
+      text-decoration: none;
+      box-shadow: 0 2px 10px #3ec6e020;
+    }
+    .contact-icons a:hover {
+      background: #00b694;
+      color: #fff;
+    }
+
+    .certification-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #fdc830 0%, #f37335 100%);
+      color: #fff;
+      margin: 0 7px 6px 0;
+      border-radius: 16px;
+      font-size: 0.96rem;
+      padding: 7px 13px;
+      font-weight: 500;
+    }
+    @media (max-width: 700px) {
+      section {padding: 16px;}
+      .project-list {grid-template-columns: 1fr;}
+      .navbar {flex-direction: column;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Muthineni Jaya Chaitanya</h1>
+    <div class="navbar" id="navbar">
+      <a href="#about" class="active" onclick="showTab(event, 'about')">About</a>
+      <a href="#skills" onclick="showTab(event, 'skills')">Skills</a>
+      <a href="#experience" onclick="showTab(event, 'experience')">Experience</a>
+      <a href="#projects" onclick="showTab(event, 'projects')">Projects</a>
+      <a href="#contact" onclick="showTab(event, 'contact')">Contact</a>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <section class="tab-content active" id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I am <b>Muthineni Jaya Chaitanya</b>, a passionate Java Spring Boot developer with 2+ years' experience in banking software, microservices, and web APIs. I enjoy designing robust backend systems, writing clean code, and collaborating with teams to solve real-world business problems.
+      <br><br>
+      My motivation is to build innovative solutions and ensure quality delivery, whether working on a complex microservices architecture or delivering a simple REST API.<br>
+    </p>
+  </section>
+
+  <section class="tab-content" id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-badge">Java 8</div>
+      <div class="skill-badge">Spring Boot</div>
+      <div class="skill-badge">Spring</div>
+      <div class="skill-badge">JPA (Hibernate)</div>
+      <div class="skill-badge">REST API</div>
+      <div class="skill-badge">Microservices</div>
+      <div class="skill-badge">SQL</div>
+      <div class="skill-badge">Oracle</div>
+      <div class="skill-badge">Maven</div>
+      <div class="skill-badge">TeamCity</div>
+      <div class="skill-badge">Jira</div>
+      <div class="skill-badge">BitBucket</div>
+      <div class="skill-badge">HTML &amp; CSS</div>
+      <div class="skill-badge">JavaScript</div>
+      <div class="skill-badge">Git</div>
+    </div>
+    <h3>Languages</h3>
+    <div class="languages">
+      <div class="skill-badge">English</div>
+      <div class="skill-badge">Telugu</div>
+      <div class="skill-badge">Tamil</div>
+    </div>
+    <h3>Certifications</h3>
+    <span class="certification-badge">OCAJP: Oracle Certified Java SE 8 Programmer</span>
+  </section>
+
+  <section class="tab-content" id="experience">
+    <h2>Experience</h2>
+    <b>Virtusa Consulting Services Pvt Ltd</b><br>
+    <span>Software Engineer — June 2022 – Present | Chennai, India</span>
+    <ul>
+      <li>Developed and maintained scalable software with Java & Spring framework</li>
+      <li>Designed and built microservices for banking apps to improve scalability</li>
+      <li>Implemented RESTful APIs to interconnect system components</li>
+      <li>Integrated Spring JPA (Hibernate) for fast, reliable database operations</li>
+      <li>Collaborated with cross-functional teams and product managers</li>
+      <li>Used SonarQube for code quality and improvement areas</li>
+    </ul>
+    <h3>Education</h3>
+    <b>Madanapalle Institute of Technology & Sciences</b><br>
+    B.Tech in Computer Science and Engineering, 2018–2022
+  </section>
+
+  <section class="tab-content" id="projects">
+    <h2>Portfolio Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <span class="project-title">Client Service Provider (CSP) Platform</span>
+        <p class="project-desc">
+          Designed and developed scalable microservices for seamless client servicing in the banking domain, focusing on RESTful architecture and API standards.
+        </p>
+        <span class="project-tech"><b>Tech:</b> Java, Spring Boot, JPA, Oracle, REST, Maven, TeamCity</span>
+      </div>
+      <div class="project-card">
+        <span class="project-title">Hotel Management System</span>
+        <p class="project-desc">
+          Built a full-stack hotel management backend with Spring Boot, delivering core CRUD operations, database integration with JPA, service/controller layers, and REST APIs.
+        </p>
+        <span class="project-tech"><b>Tech:</b> Java, Spring Boot, Spring Data JPA (Hibernate), SQL</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-content" id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><b>Email:</b> jayachaitanya2001@gmail.com</li>
+      <li><b>Phone:</b> +91-9550615883</li>
+      <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/jaya-chaitanya-muthineni-a23924169" target="_blank">jaya-chaitanya-muthineni</a></li>
+    </ul>
+    <div class="contact-icons">
+      <a href="mailto:jayachaitanya2001@gmail.com" title="Email">&#9993;</a>
+      <a href="https://www.linkedin.com/in/jaya-chaitanya-muthineni-a23924169" title="LinkedIn" target="_blank">&#128187;</a>
+      <!-- You can add GitHub / portfolio site icons here -->
+    </div>
+  </section>
+
+  <script>
+    const tabs = document.querySelectorAll('.navbar a');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    function showTab(evt, tabId) {
+      tabs.forEach(tab => tab.classList.remove('active'));
+      evt.currentTarget.classList.add('active');
+      tabContents.forEach(content => content.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      evt.preventDefault();
+    }
+  </script>
+</body>
+</html>
